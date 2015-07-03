@@ -2,7 +2,7 @@
 
 Override standard log library by using fluend-logger https://github.com/fluent/fluent-logger-golang
 
-All log message print stdout and fluentd with tag goluent.<your hostname>.*.
+All log message print stdout and fluentd with tag goluent.\<your hostname\>.*.
 
 This is inspired by http://12factor.net/ 
 
