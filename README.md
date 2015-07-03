@@ -27,3 +27,10 @@ import (
 )
 ```
 
+```
+log.Info("goluent now")
+// 2015/07/03 15:33:10 goluent now
+
+log.Errorf("over %v sec", 10)
+//2015/07/03 15:37:00 over 10 sec
+```
