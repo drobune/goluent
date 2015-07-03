@@ -36,9 +36,9 @@ func print(s severity, args ...interface{}) {
 
 	message := fmt.Sprint(args...)
 
+	stdLog.Println(message)
 	if err == nil {
 		f.Post(severityName[s], map[string]string{"message": message})
-		stdLog.Println(message)
 	}
 }
 
@@ -52,9 +52,9 @@ func printf(s severity, format string, args ...interface{}) {
 
 	message := fmt.Sprintf(format, args...)
 
+	stdLog.Println(message)
 	if err == nil {
 		f.Post(severityName[s], map[string]string{"message": message})
-		stdLog.Println(message)
 	}
 }
 
