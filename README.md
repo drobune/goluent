@@ -8,7 +8,7 @@ This is inspired by http://12factor.net/
 
 # fluentd configuration
 
-add next
+add this
 
 ```
 <match goluent.**>
