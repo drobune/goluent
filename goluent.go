@@ -33,6 +33,7 @@ func print(s severity, args ...interface{}) {
 		FluentHost: "localhost",
 		TagPrefix:  "goluent." + getHostname(),
 	})
+	defer f.Close()
 
 	message := fmt.Sprint(args...)
 
@@ -49,6 +50,7 @@ func printf(s severity, format string, args ...interface{}) {
 		FluentHost: "localhost",
 		TagPrefix:  "goluent." + getHostname(),
 	})
+	defer f.Close()
 
 	message := fmt.Sprintf(format, args...)
 
