@@ -86,10 +86,12 @@ func Errorf(format string, args ...interface{}) {
 
 func Fatal(args ...interface{}) {
 	print(fatalLog, args...)
+	os.Exit(255)
 }
 
 func Fatalf(format string, args ...interface{}) {
 	printf(fatalLog, format, args...)
+	os.Exit(255)
 }
 
 func getHostname() string {
