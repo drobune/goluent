@@ -1,6 +1,8 @@
 # goluent
 
-Override standard log library by using fluend-logger https://github.com/fluent/fluent-logger-golang
+Log mapper of [fluend-logger] (https://github.com/fluent/fluent-logger-golang).
+
+Log style is the same as [glog](https://github.com/golang/glog).
 
 All log message print stdout and fluentd with tag goluent.\<your hostname\>.*.
 
