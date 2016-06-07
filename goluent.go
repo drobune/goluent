@@ -26,7 +26,7 @@ var hostname string
 
 type severity int8
 
-func print(s severity, args ...interface{}) {
+func _print(s severity, args ...interface{}) {
 	//connect fluent server
 	f, err := fluent.New(fluent.Config{
 		FluentPort: 24224,
@@ -43,7 +43,7 @@ func print(s severity, args ...interface{}) {
 	}
 }
 
-func printf(s severity, format string, args ...interface{}) {
+func _printf(s severity, format string, args ...interface{}) {
 	//connect fluent server
 	f, err := fluent.New(fluent.Config{
 		FluentPort: 24224,
@@ -60,37 +60,45 @@ func printf(s severity, format string, args ...interface{}) {
 	}
 }
 
+func Print(args ...interface{}) {
+	_print(infoLog, args...)
+}
+
+func Printf(format string, args ...interface{}) {
+	_printf(infoLog, format, args...)
+}
+
 func Info(args ...interface{}) {
-	print(infoLog, args...)
+	_print(infoLog, args...)
 }
 
 func Infof(format string, args ...interface{}) {
-	printf(infoLog, format, args...)
+	_printf(infoLog, format, args...)
 }
 
 func Warning(args ...interface{}) {
-	print(warningLog, args...)
+	_print(warningLog, args...)
 }
 
 func Warningf(format string, args ...interface{}) {
-	printf(warningLog, format, args...)
+	_printf(warningLog, format, args...)
 }
 
 func Error(args ...interface{}) {
-	print(errorLog, args...)
+	_print(errorLog, args...)
 }
 
 func Errorf(format string, args ...interface{}) {
-	printf(errorLog, format, args...)
+	_printf(errorLog, format, args...)
 }
 
 func Fatal(args ...interface{}) {
-	print(fatalLog, args...)
+	_print(fatalLog, args...)
 	os.Exit(255)
 }
 
 func Fatalf(format string, args ...interface{}) {
-	printf(fatalLog, format, args...)
+	_printf(fatalLog, format, args...)
 	os.Exit(255)
 }
 
